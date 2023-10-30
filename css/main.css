@@ -1,24 +1,26 @@
+/* GLOBAL STYLES */
 a {
-  color: red;
+  color: rgba(131, 31, 200, 0.2);
 }
-#exec-bio {
-  background-color: lightgray;
+html {
+  background: #ffffff;
 }
+
+/* SOCIAL STYLES */
+.social-link {
+  background: rgba(150, 150, 150, 0.5);
+  color: #ff0000;
+}
+
+/* BIO STYLES */
 .bio-box {
-border: 1px solid black;
+border: 1px solid #000000;
 }
-.bio-box a {
-  color: green;
+.bio-copy a {
+  color: #00ff00;
 }
-div {
-  border: 1px solid black;
-}
-div a {
-  color: green;
-}
-li {
-  border: 1px solid black;
-}
-li a {
-  color: blue;
-}
+/* div.bio-box { */
+/*   border: 1px solid #00ff00; */
+/* } */
+/*  */
+
