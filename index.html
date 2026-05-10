@@ -1,116 +1,97 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Test Page: Don't Panic</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #1a1a18;
+      --paper: #f7f6f2;
+      --dim: #9a9890;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Cormorant', Georgia, serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 3rem;
+    }
+
+    main {
+      max-width: 480px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: arrive 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    }
+
+    @keyframes arrive {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .rule {
+      width: 32px;
+      height: 1px;
+      background: var(--ink);
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.35;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.75rem;
+      color: var(--ink);
+    }
+
+    p {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--dim);
+      letter-spacing: 0.02em;
+    }
+
+    p + p {
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        align-items: flex-start;
+        padding-top: 5rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <div class="full-hero hero-home">
-    <h1>I'm an h1</h1>
-    <ul>
-      <li>
-        <a href="https://example.com/" class="social">Link</a>
-      </li>
-      <li>
-        <a href="https://example.com/" class="social-link">Link</a>
-      </li>
-      <li>
-        <a href="https://example.com/" class="social-link">Link</a>
-      </li>
-      <li>
-        <a href="https://example.com/" class="social-link">Link</a>
-      </li>
-    </ul>
-  </div>
-  <h2>I'm an h2</h2>
-
-  <div class="test-box">
-    200px wide
-  </div>
-  <div class="test-box test-box-nosizing">
-    200px wide + border + padding = 300px
-  </div>
-  <div class="test-box test-box-nosizing test-box-sizing">
-    200px wide + border + padding + box-sizing: border-box = 200px
-  </div>
-
-  <div class="bio-wrapper">
-    <div class="bio-box">
-      <h3>Michael Hartl</h3>
-      <a href="https://twitter.com/mhartl" class="social-link">here</a>
-      <div class="bio-copy">
-        <p>
-          Known for his dazzling charm, rapier wit, and unrivaled humility,
-          Michael is the creator of the
-          <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-          and principal author of the
-          <a href="https://learnenough.com/">Learn Enough to Be Dangerous</a>
-          Introductory sequence. Michael is also notorious as the founder of
-          <a href="http://tauday.com/">Tau Day</a> and author of
-          <a href="http://tauday.com/tau-manifesto"><em>The Tau Manifesto
-            </em></a>, but rumors that he's secretly a supervillain are slightly exaggerated.
-        </p>
-      </div>
-    </div>
-    <div class="bio-box">
-      <h3>Lee Donahoe</h3>
-      <a href="https://twitter.com/leedonahoe" class="social-link">here</a>
-      <div class="bio-copy">
-        <p>
-          When he's not literally swimming with sharks or hunting powder stashes on
-          his snowboard, you can find Lee in front of his computer designing interfaces, doing front-end development,
-          or
-          writing some of the interface-related Learn Enough tutorials.
-        </p>
-      </div>
-    </div>
-    <div class="bio-box">
-      <h3>Nick Merwin</h3>
-      <a href="https://twitter.com/nickmerwin" class="social-link">here</a>
-      <div class="bio-copy">
-        <p>
-          You may have seen him shredding guitar live with Capital Cities on Jimmy Kimmel, Conan, or The Ellen Show,
-          but
-          rest assured Nick is a true nerd at heart.
-          He's just as happy shredding well-spec'd lines of code from a tour bus
-          as he is from his kitchen table.
-        </p>
-      </div>
-    </div>
-    <div class="bio-box">
-      <h3>??</h3>
-      <p>
-        The Future
-      </p>
-    </div>
-  </div>
-  <p>
-    Learn Enough to Be Dangerous is a leader in the movement to teach the
-    world <em>technical sophistication</em>, which includes both "hard
-    skills" like coding, command lines, and version control, and "soft skills"
-    like guessing keyboard shorcuts, Googling error messages, and knowing
-    when to just reboot the darn thing.
-  </p>
-  <p>
-    We believe there are <strong>at least a billion people</strong> who can
-    benefit from learning technical sophistication, probably more. To join
-    our movement, <a href="https://learnenough.com/#email_list">sign up for
-      our official email list</a> now.
-  </p>
-  <h3>Background</h3>
-  <p>
-    Learn Enough to Be Dangerous is an outgrowth of the
-    <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> and the <a
-      href="https://www.softcover.io/">Softcover publishing platform</a>.
-    This page is part of the sample site for <a href="https://learnenough.com/css-tutorial"><em>Learn Enough CSS and
-        Layout to Be Dangerous</em></a>, which teaches the basics of <strong>C</strong>ascading <strong>S</strong>tyle
-    <strong>S</strong>heets, the language that allows web pages to be styled.
-    Other related tuorials can be found at <a href="https://learnenough.com/">learnenough.com</a>.
-  </p>
-
+  <main>
+    <div class="rule"></div>
+    <h1>Under construction isn't quite right.</h1>
+    <p>This space is being considered carefully. Something worth reading will be here when it's ready.</p>
+    <p>In the meantime — nothing to see, and that's intentional.</p>
+  </main>
 </body>
-
 </html>
